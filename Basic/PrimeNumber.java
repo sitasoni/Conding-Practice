@@ -1,5 +1,6 @@
 package Basic;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PrimeNumber {
@@ -8,7 +9,8 @@ public class PrimeNumber {
         int num = sc.nextInt();
         sc.close();
         // isPrimeNumber(num);
-        countPrimeTillN(num);
+        // countPrimeTillN(num);
+        printAllPrimeTillN(num);
     }
 
     public static void isPrimeNumber(int num) {
@@ -35,26 +37,40 @@ public class PrimeNumber {
             return;
         }
         int count = 0;
-        for(int i = 2; i <= num; i++){
+        for (int i = 2; i <= num; i++) {
             boolean isPrime = true;
-            for(int j = 2; j * j <= i; j++){
-                if(i % j == 0){
+            for (int j = 2; j * j <= i; j++) {
+                if (i % j == 0) {
                     isPrime = false;
                     break;
                 }
             }
-            if(isPrime) count++;
+            if (isPrime)
+                count++;
         }
         System.err.println("Total prime number is : " + count);
     }
 
-    public static void printAllPrimeTillN(int num){
-        if(num <=1) {
+    public static void printAllPrimeTillN(int num) {
+        if (num <= 1) {
             System.err.println("Please enter valid number");
-            return ;
+            return;
         }
-        for(int i = 2; i <= num; i++){
-            
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = 2; i <= num; i++) {
+            boolean isPrime = true;
+            for (int j = 2; j * j<= i; j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime)
+                list.add(i);
+        }
+        System.err.println("List size is : " + list.size());
+        for (Integer item : list) {
+            System.out.print(item + ", ");
         }
     }
 
