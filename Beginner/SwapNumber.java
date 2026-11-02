@@ -1,4 +1,4 @@
-package Basic.Beginner;
+package Beginner;
 
 public class SwapNumber {
     public static void main(String[] args) {

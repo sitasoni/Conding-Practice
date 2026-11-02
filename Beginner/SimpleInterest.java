@@ -1,4 +1,4 @@
-package Basic.Beginner;
+package Beginner;
 
 
 public class SimpleInterest {
